@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: install git on ubuntu node
+    apt:
+     name: git
+     state: present
+
+
+  - name: install tree on ubuntu node
+    apt:
+     name: tree
+     state: present

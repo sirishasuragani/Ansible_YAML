@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.19.118
+  become: yes
+  tasks:
+  - name: install jdk on ubuntu node
+    apt:
+     name: openjdk-8-jre
+     state: present
+

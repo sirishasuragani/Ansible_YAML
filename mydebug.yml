@@ -1,0 +1,6 @@
+---
+- hosts: 172.31.12.245
+  become: yes
+  tasks:
+   - name: execute linux command directly using playbook
+     command: hostname -f

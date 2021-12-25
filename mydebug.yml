@@ -4,3 +4,8 @@
   tasks:
    - name: execute linux command directly using playbook
      command: hostname -f
+     register: myresult
+
+   - name: display my first task result
+     debug: 
+       msg: "{{myresult}}"

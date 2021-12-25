@@ -1,8 +1,8 @@
 ---
-- hosts: all
+- hosts: 172.31.12.245
   become: yes
   tasks:
   - name: install vim 
-  apt:
-    name: vim
-    state: present
+    apt:
+     name: vim
+     state: present

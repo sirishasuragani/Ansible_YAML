@@ -1,5 +1,8 @@
 ---
-- name: create a file on node side
-  file: 
-     path: /home/ubuntu/testfile
-     state: touch
+- hosts: 172.31.12.245
+  become: yes
+  tasks:
+  - name: create a file on node side
+    file: 
+      path: /home/ubuntu/testfile
+      state: touch

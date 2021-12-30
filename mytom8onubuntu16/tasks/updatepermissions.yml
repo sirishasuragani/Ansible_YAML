@@ -16,7 +16,7 @@
 - name: give the tomcat group execute access to the conf directory
   file:
    path: /opt/tomcat/conf
-   mode: g+r
+   mode: g+x
    state: directory
 
 - name: tomcat user the owner of the webapps

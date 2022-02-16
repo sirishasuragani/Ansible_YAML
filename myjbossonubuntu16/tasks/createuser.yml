@@ -1,0 +1,28 @@
+---
+- name: create a new user which is used to start jboss server
+  user:
+   name: appserver
+   shell: /bin/false
+   groups: appserver
+   home: /usr/local/share/jboss
+   state: present
+
+- name: change the ownership of the newly created folder to appserver user
+  path: /usr/local/share/jboss
+  state: directory
+  recurse: yes
+  groups: appserver
+
+- name: creating a new user for the JBoss management console
+  beccome: yes
+  become_method: sudo
+  become_user: appserver
+  become_flags: 'su -c'
+ 
+
+- name: change the working directory to /usr/local/share/jboss/bin before executing the command
+  shell: add-user.sh
+  args:
+   chdir: /usr/local/share/jboss/bin
+
+    

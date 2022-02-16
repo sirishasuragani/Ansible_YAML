@@ -1,0 +1,11 @@
+---
+ - name: download the tar file of jboss
+   get_url:
+    url: http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz
+    dest: /usr/local/share/jboss
+    force_basic_auth: yes
+   
+ - name: extract the tar file into /usr/local/share/jboss directory
+   command:
+    cmd: sudo tar xfvz /usr/local/share/jboss/jboss-as-7.1.1.Final.tar.gz
+   creates: LICENSE

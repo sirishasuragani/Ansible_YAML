@@ -1,2 +1,6 @@
 ---
 # tasks file for myjbossonubuntu16
+
+- include_tasks:  installjboss.yml
+- include_tasks:  createuser.yml
+
